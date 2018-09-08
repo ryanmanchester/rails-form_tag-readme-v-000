@@ -142,3 +142,18 @@ Started GET "/posts/new" for 108.21.211.119 at 2018-09-08 17:30:58 +0000
 Processing by PostsController#new as HTML
   Rendered posts/new.html.erb within layouts/application (0.5ms)
 Completed 200 OK in 14ms (Views: 13.3ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/posts/new" for 108.21.211.119 at 2018-09-08 17:34:36 +0000
+  [1m[36mActiveRecord::SchemaMigration Load (0.1ms)[0m  [1mSELECT "schema_migrations".* FROM "schema_migrations"[0m
+Processing by PostsController#new as HTML
+  Rendered posts/new.html.erb within layouts/application (1.4ms)
+Completed 200 OK in 249ms (Views: 235.4ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/posts?post%5Btitle%5D=Title&post%5Bdescription%5D=Desc" for 108.21.211.119 at 2018-09-08 17:34:48 +0000
+Processing by PostsController#index as HTML
+  Parameters: {"post"=>{"title"=>"Title", "description"=>"Desc"}}
+  [1m[35mPost Load (0.2ms)[0m  SELECT "posts".* FROM "posts"
+  Rendered posts/index.html.erb within layouts/application (1.5ms)
+Completed 200 OK in 13ms (Views: 11.3ms | ActiveRecord: 0.3ms)
