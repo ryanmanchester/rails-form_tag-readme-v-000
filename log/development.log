@@ -331,3 +331,27 @@ Processing by PostsController#index as HTML
   [1m[36mPost Load (0.2ms)[0m  [1mSELECT "posts".* FROM "posts"[0m
   Rendered posts/index.html.erb within layouts/application (1.1ms)
 Completed 200 OK in 11ms (Views: 10.5ms | ActiveRecord: 0.2ms)
+
+
+Started GET "/posts/new" for 108.21.211.119 at 2018-09-08 17:50:34 +0000
+  [1m[36mActiveRecord::SchemaMigration Load (0.1ms)[0m  [1mSELECT "schema_migrations".* FROM "schema_migrations"[0m
+Processing by PostsController#new as HTML
+  Rendered posts/new.html.erb within layouts/application (2.4ms)
+Completed 200 OK in 251ms (Views: 237.8ms | ActiveRecord: 0.0ms)
+
+
+Started POST "/posts" for 108.21.211.119 at 2018-09-08 17:51:09 +0000
+Processing by PostsController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"/eTwpQJiRyY1xelMoaugQrTiphfp20s6yGVmIRvuPbZTL3uZ/Vlr28jq4RYzz8Ge1Fsx/qf4+liHGn8j6FWpoA==", "post"=>{"title"=>"Rails Form", "description"=>"This was generated using Rails form tag helper methods."}, "commit"=>"Submit Post"}
+  [1m[35m (0.1ms)[0m  begin transaction
+  [1m[36mSQL (0.3ms)[0m  [1mINSERT INTO "posts" ("title", "description", "created_at", "updated_at") VALUES (?, ?, ?, ?)[0m  [["title", "Rails Form"], ["description", "This was generated using Rails form tag helper methods."], ["created_at", "2018-09-08 17:51:09.012771"], ["updated_at", "2018-09-08 17:51:09.012771"]]
+  [1m[35m (1.8ms)[0m  commit transaction
+Redirected to http://159.89.225.105:59039/posts
+Completed 302 Found in 11ms (ActiveRecord: 2.6ms)
+
+
+Started GET "/posts" for 108.21.211.119 at 2018-09-08 17:51:09 +0000
+Processing by PostsController#index as HTML
+  [1m[36mPost Load (0.2ms)[0m  [1mSELECT "posts".* FROM "posts"[0m
+  Rendered posts/index.html.erb within layouts/application (1.1ms)
+Completed 200 OK in 11ms (Views: 10.0ms | ActiveRecord: 0.2ms)
